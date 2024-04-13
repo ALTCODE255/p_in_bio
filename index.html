@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>░P░U░S░S░Y░ ░I░N░ ░B░I░O░ ░G░E░N░E░R░A░T░O░R░</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+        
+            <div class="d-flex flex-column align-items-center justify-content-center" style="height: 85vh">
+                <h2 class="m-3">░P░U░S░S░Y░ ░I░N░ ░B░I░O░ ░G░E░N░E░R░A░T░O░R░</h2>
+                <form onsubmit="return getText();" id="form">
+                    <label for="text">Enter your text here (Case insensitive):</label><br>
+                    <input type="text" placeholder="pussy" id="input">
+                    <input type="submit" value="Generate">
+                </form>
+                <textarea rows="5" cols="40" class="m-2" readonly id="changeme">░M░Y░ ░P░U░S░S░Y░ ░I░N░ ░B░I░O░</textarea>
+                <button onclick="copyText()" id="button">Copy to Clipboard</button>
+            </div>
+            
+            <script>
+                function getText() {
+                    var stringList = Array.from(document.getElementById("input").value.toUpperCase());
+                    var editedString = "░M░Y░ ";
+                    stringList.forEach(chr => {
+                        editedString += "░" + chr;
+                    });
+                    editedString += "░ ░I░N░ ░B░I░O░";
+                    document.getElementById("changeme").innerHTML = editedString;
+                    return false;
+                }
+
+                function copyText() {
+                    var copyText = document.getElementById("changeme");
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999);
+                    navigator.clipboard.writeText(copyText.value);
+                    alert("Copied text!");
+                }
+            </script>
+    <footer>
+        <hr>
+        <center>
+            Made by <a href="https://twitter.com/ALTCODE255" style="color: #ffbf00;">@ALTCODE255</a>
+        </center>
+        <hr>
+    </footer>
+</body>
+
+</html>
