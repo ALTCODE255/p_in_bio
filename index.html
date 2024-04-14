@@ -10,43 +10,42 @@
 </head>
 
 <body>
-        
-            <div class="d-flex flex-column align-items-center justify-content-center" style="height: 85vh">
-                <h2 class="m-3">░P░U░S░S░Y░ ░I░N░ ░B░I░O░ ░G░E░N░E░R░A░T░O░R░</h2>
-                <form onsubmit="return getText();">
-                    <label for="text">Enter your text here (Case insensitive):</label><br>
-                    <input type="text" placeholder="pussy" id="input">
-                    <input type="submit" value="Generate">
-                </form>
-                <textarea readonly rows="5" cols="40" class="m-2" id="changeme">░M░Y░ ░P░U░S░S░Y░ ░I░N░ ░B░I░O░</textarea>
-                <button onclick="copyText()" class="m-2" id="button">Copy to Clipboard</button>
-                <form onsubmit="return false;">
-                    <label for="text">(Optional) Filler character (default: ░):</label>
-                    <input type="text" placeholder="░" size="1" id="char_input">
-                </form>
-            </div>
-            
-            <script>
-                function getText() {
-                    var stringList = Array.from(document.getElementById("input").value.toUpperCase());
-                    var f = document.getElementById("char_input").value || "░"; // filler char
-                    var editedString = `${f}M${f}Y${f} `;
-                    stringList.forEach(chr => {
-                        editedString += f + chr;
-                    });
-                    editedString += `${f} ${f}I${f}N${f} ${f}B${f}I${f}O${f}`;
-                    document.getElementById("changeme").innerHTML = editedString;
-                    return false;
-                }
+    <div class="d-flex flex-column align-items-center justify-content-center" style="height: 85vh">
+        <h2 class="m-3">░P░U░S░S░Y░ ░I░N░ ░B░I░O░ ░G░E░N░E░R░A░T░O░R░</h2>
+        <form onsubmit="return getText();">
+            <label for="text">Enter your text here (Case insensitive):</label><br>
+            <input type="text" placeholder="pussy" id="input">
+            <input type="submit" value="Generate">
+        </form>
+        <textarea readonly rows="5" cols="40" class="m-2" id="changeme">░M░Y░ ░P░U░S░S░Y░ ░I░N░ ░B░I░O░</textarea>
+        <button onclick="copyText()" class="m-2" id="button">Copy to Clipboard</button>
+        <form onsubmit="return false;">
+            <label for="text">(Optional) Filler character (default: ░):</label>
+            <input type="text" placeholder="░" size="1" id="char_input">
+        </form>
+    </div>
 
-                function copyText() {
-                    var copyText = document.getElementById("changeme");
-                    copyText.select();
-                    copyText.setSelectionRange(0, 99999);
-                    navigator.clipboard.writeText(copyText.value);
-                    alert("Copied text!");
-                }
-            </script>
+    <script>
+        function getText() {
+            var stringList = Array.from(document.getElementById("input").value.toUpperCase());
+            var f = document.getElementById("char_input").value || "░"; // filler char
+            var editedString = `${f}M${f}Y${f} `;
+            stringList.forEach(chr => {
+                editedString += f + chr;
+            });
+            editedString += `${f} ${f}I${f}N${f} ${f}B${f}I${f}O${f}`;
+            document.getElementById("changeme").innerHTML = editedString;
+            return false;
+        }
+
+        function copyText() {
+            var copyText = document.getElementById("changeme");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            alert("Copied text!");
+        }
+    </script>
     <footer>
         <hr>
         <center>
